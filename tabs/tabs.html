@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tabs">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script>
+        let mod = angular.module("tabs", [])
+        mod.controller("test", function ($scope) {
+            $scope.tabs = {
+                "按钮1": "卡片1",
+                "按钮2": "卡片2",
+                "按钮3": "卡片3",
+            }
+
+            $scope.now = 0
+
+            $scope.setNow = function (i) {
+                $scope.now = i
+            }
+        })
+    </script>
+    <style>
+        input {}
+        input.active {background: yellow}
+        div {display: none; width: 100px; height: 100px; background: #ccc}
+        div.active {display: block}
+    </style>
+</head>
+<body ng-controller="test">
+    <input type="button" class="{{now==$index?'active':''}}" value="k" ng-click="setNow($index)" ng-repeat="(k,v) in tabs">
+    <div class="{{now==$index?'active':''}}" ng-repeat="v in tabs" >{{v}}</div>
+</body>
+</html>
