@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义过滤器</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script>
+        let mod = angular.module("app", []);
+
+        // 自定义隐藏手机号
+        mod.filter("hideNumber", function () {
+            // angular奇怪的地方 需要返回一个方法
+            return function (input, len=4) {
+                console.log(len);
+                input = input.toString();
+                return input.substring(0,3)+"".padStart(len,"*")+input.substring(3+len);
+            }
+        })
+        // 多个参数需要用:分隔
+        mod.filter("do", function () {
+            // angular奇怪的地方 需要返回一个方法
+            return function (input, arg1, arg2, arg3) {
+                console.log(arg1);
+                console.log(arg2);
+                console.log(arg3);
+                return input;
+            }
+        })
+
+        mod.controller("test", function () {
+
+        })
+    </script>
+</head>
+<body>
+<div ng-init="arr=[{name:'林', num: 13148899351},{name:'许', num: 13148899350}]" ng-controller="test">
+    <ul>
+        <li ng-repeat="i in arr">
+            <h3>{{i.name}}</h3>
+            <!--过滤器传参-->
+            <h4>{{i.num|hideNumber:8}}</h4>
+            <!--传多个参数-->
+            <h4>{{i.num|do: 1:2:3}}</h4>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

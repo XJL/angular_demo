@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>自带过滤器</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script>
+        let mod = angular.module("app", []);
+
+        mod.controller("test", function () {
+
+        })
+    </script>
+</head>
+<body>
+<div ng-init="arr=[{item:'鞋子', price:79},{item:'上衣',price:88}];son=[{name:'林', date: 1544663467204},{name:'许', date: 1543663467304}]" ng-controller="test">
+    <ul>
+        <li ng-repeat="i in arr">
+            <h3>{{i.item}}</h3>
+            <h4>{{i.price|currency:'￥'}}</h4>
+        </li>
+    </ul>
+    <ul>
+        <li ng-repeat="i in son">
+            <h3>{{i.name}}</h3>
+            <!-- h: 12小时制 H: 24小时制 -->
+            <h4>{{i.date|date:'y年M月d日 H:m:ss a'}}</h4>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
