@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ng bug: 事件 赋值 循环 放一起就出bug</title>
-    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../../node_modules/angular/angular.js"></script>
 </head>
 <body ng-init="a=0;arr=[1,2,3]">
     <input type="button" ng-click="a=2" ng-repeat="item in arr" value="按钮">

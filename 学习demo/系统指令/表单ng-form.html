@@ -1,0 +1,17 @@
+<html ng-app="">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../../node_modules/angular/angular.js" charset="utf-8"></script>
+</head>
+<body>
+<ng-form name="form1" action="http://it.kaikeba.com/" method="get">
+    邮箱：<input type="email" ng-model="email" name="email" required/>
+    <span ng-show="form1.email.$invalid">邮箱填写有误</span>
+    <br>
+    用户：<input type="text" name="user" /><br>
+    密码：<input type="password" name="pass" /><br>
+    <input type="submit" value="提交">
+</ng-form>
+</body>
+</html>

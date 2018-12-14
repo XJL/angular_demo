@@ -1,0 +1,57 @@
+
+ng-app                  指定范围
+ng-model                双向绑定
+ng-bind                 输出
+ng-bind-html            转义输出
+ng-bind-template        模板输出
+
+ng-(action)             定义事件
+
+
+ng-show/hide            显示隐藏（dom不会删除）
+ng-if                   是否存在（dom会删除）
+
+ng-src                  加载完成前 img不会报错
+ng-href                 加载完成前 点击 a 不会异常
+
+ng-style                可以用json格式给style赋值
+ng-class                可以用数组给class赋值
+
+ng-cloak                加载完成前，隐藏元素
+
+ng-value                value="xxx"
+ng-readonly             readonly
+ng-selected             selected
+ng-disabled             disabled
+ng-checked              checked
+
+ng-switch               配合ng-switch-when使用
+                        1. ng-switch="xxx"
+                        2. ng-switch-when="xxx"
+
+ng-jq                   指定另一个jq兼容库做angular内部使用
+
+ng-repeat               重复
+
+ng-include              包含一个文件进来
+
+ng-options              用于select的options赋值
+                        1. 有格式要求 ng-options="id as name for item in arr"
+                        2. 需要搭配ng-model使用
+                        3. 可分组选项 ng-options="id as name group by type for item in arr"
+
+ng-class                class
+ng-class-odd            奇数行起作用
+ng-class-even           偶数行起作用
+
+ng-list                 输入转化为数组 配合ng-model使用
+
+ng-form                 表单 <ng-form name="form1"></ng-form>
+                        1. 使用ng-form 不使用自带form
+                        2. ng-form 需要加name
+                        3. 每个表单项都要ng-model name
+                        4. form1对象里面有很多数据可供使用  form1.$error等等
+                        5. 必填项可以加required <input required>
+
+
+
